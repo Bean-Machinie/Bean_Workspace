@@ -6,7 +6,7 @@ export default function ProtectedRoute() {
 
   if (loading) return null
 
-  if (!isAuthenticated) return <Navigate to="/" replace />
+  if (!isAuthenticated) return <Navigate to="/login" replace />
 
   return <Outlet />
 }

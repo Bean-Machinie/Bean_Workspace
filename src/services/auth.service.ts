@@ -10,6 +10,11 @@ export async function signInWithEmail(email: string, password: string) {
   return { user: data.user, session: data.session, error }
 }
 
+export async function signUpWithEmail(email: string, password: string) {
+  const { data, error } = await supabase.auth.signUp({ email, password })
+  return { user: data.user, session: data.session, error }
+}
+
 export async function signOut() {
   const { error } = await supabase.auth.signOut()
   return { error }
